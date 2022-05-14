@@ -8,24 +8,97 @@
    margin: 0 auto;
    padding: 0 15px;
 }
+.pagination{
+   max-width: 800px;
+   margin: 0 auto;
+   display: flex;
+   justify-content: flex-end;
+}
 .pagination__bullet{
    width: 10px;
    height: 10px;
    background-color: blueviolet;
    border-radius: 100%;
+   padding: 10px;
+   margin: 5px;
 }
-.slider{
+@keyframes fadeIn{
+   0% {
+       opacity: 0;
+       transform: scale(0.7);
+   }
+   100% {
+      transform: scale(1);
+       opacity: 1;
+    }
 }
 .slider__container{
-   max-width: 800px;
-   margin: 80px auto 0;
+   width: 100%;
+   margin: 6em auto 0;
+   white-space: nowrap;
+   overflow: hidden;
+   text-align: center;
+   padding: 0 5px;
+}
+.slider__slide{
+   display: none;
+   animation: fadeIn 1s ease-in;
+}
+.slide__caption{
+   margin-top: 1em;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+   text-align: left;
 }
 .slide__img{
-   max-width: 800px;
-   max-height: 500px;
-   overflow: hidden;
+   width: 800px;
+   height: 500px;
+   background-color: rgb(237, 160, 160);
 }
 .slide__img > img{
    width: 100%;
    height: 100%;
+   object-fit: cover;
+}
+input[type="radio"]{
+   display: none;
+}
+label{
+   display: block;
+   width: 30px;
+   height: 30px;
+}
+label:hover{
+   opacity: 0.4;
+}
+label > span{
+   display: block;
+   width: 10px;
+   height: 10px;
+   background-color: blueviolet;
+   border: 2px solid blueviolet;
+   border-radius: 100%;
+   padding: 5px;
+   margin: 5px;
+}
+label > span:hover{
+   opacity: 0.6;
+}
+#slide1:checked ~ .pagination label:nth-of-type(1) > span,
+#slide2:checked ~ .pagination label:nth-of-type(2) > span,
+#slide3:checked ~ .pagination label:nth-of-type(3) > span,
+#slide4:checked ~ .pagination label:nth-of-type(4) > span{
+   background-color: #fff;
+}
+
+#slide1:checked ~ .slider__container div:nth-child(1),
+#slide2:checked ~ .slider__container div:nth-child(2),
+#slide3:checked ~ .slider__container div:nth-child(3),
+#slide4:checked ~ .slider__container div:nth-child(4){
+   display: inline-block;
+}
+@media(max-width: 900px){
+   .slide__img{
+      width: 100%;
+      height: 100%;
+   }
 }
