@@ -1,0 +1,31 @@
+*{
+   margin: 0;
+   box-sizing: border-box;
+   padding: 0;
+}
+.wrapper{
+   max-width: 1280px;
+   margin: 0 auto;
+   padding: 0 15px;
+}
+.pagination__bullet{
+   width: 10px;
+   height: 10px;
+   background-color: blueviolet;
+   border-radius: 100%;
+}
+.slider{
+}
+.slider__container{
+   max-width: 800px;
+   margin: 80px auto 0;
+}
+.slide__img{
+   max-width: 800px;
+   max-height: 500px;
+   overflow: hidden;
+}
+.slide__img > img{
+   width: 100%;
+   height: 100%;
+}
