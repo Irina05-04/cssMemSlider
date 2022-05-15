@@ -3,12 +3,6 @@
    box-sizing: border-box;
    padding: 0;
 }
-div{
-   padding: 0;
-   margin: 0;
-}
-img{
-}
 .wrapper{
    max-width: 1280px;
    margin: 0 auto;
@@ -16,7 +10,7 @@ img{
 }
 .pagination{
    max-width: 800px;
-   margin: 0 auto;
+   margin: -1em auto 0;
    display: flex;
    justify-content: flex-end;
 }
@@ -40,7 +34,7 @@ img{
 }
 .slider__slide{
    display: none;
-   animation: fadeIn 1s ease-in;
+   animation: fadeIn 0.6s ease-in;
    padding: 0;
    margin-bottom: 0;
 }
@@ -92,4 +86,13 @@ label > span{
 #slide3:checked ~ .slider__container div:nth-child(3),
 #slide4:checked ~ .slider__container div:nth-child(4){
    display: block;
+}
+@media(max-width: 768px){
+   .pagination{
+      margin-top: -3em;
+      justify-content: center;
+   }
+   .slide__caption{
+      margin-top: 3em;
+   }
 }
